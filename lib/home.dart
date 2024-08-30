@@ -40,20 +40,5 @@ class _HomeState extends State<Home> {
     final result = await Navigator.push(
         context, MaterialPageRoute(builder: (c) => const Scanner()));
     _result = result;
-
-    bool isConnected = await mssqlConnection.connect(
-      ip: '192.168.18.188',
-      port: '1433',
-      databaseName: 'egIKB_TA_Global',
-      username: 'sa',
-      password: 'Rahasia123',
-      timeoutInSeconds: 15,
-    );
-
-    if (isConnected) {
-      print('Connected');
-    } else {
-      print('Not Connected');
-    }
   }
 }
